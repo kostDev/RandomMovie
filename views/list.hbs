@@ -1,0 +1,49 @@
+<div>
+
+	<div id="list" align="center">
+		<table class="table">
+		{{#each moves}}
+			{{#each this}}
+			  {{#if this.[1] }}
+			 	<tr class="danger" onclick="rewrite(this);">
+			  {{else}}
+			  	<tr class="active" onclick="rewrite(this);">
+			  {{/if}}
+				<td>{{this.[0]}}</td>
+			  	<td align="right">
+			  {{#if this.[1]}}
+			 		<span class="glyphicon glyphicon-remove"></span>
+			  {{else}}
+			  		<span class="glyphicon glyphicon-ok"></span>
+			  {{/if}}
+			  	</td>
+			</tr>
+			{{/each}}
+		{{/each}}
+		</table>
+		<div class="back">
+			<a href="/" class="btn btn-primary btn-lg">home</a>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		let block = null;
+		function rewrite(data) {
+			//data.remove();
+			block = data;
+			// get name of filme
+			change(block.cells[0].textContent);
+			location.reload();
+		}
+
+		let change = function(data) {
+			axios.post('/list/rewrite', {move:data})
+			  .then(function (response) {
+			  })
+			  .catch(function (error) {
+			    console.log(error);
+			});
+		}
+
+	</script>
+</div>

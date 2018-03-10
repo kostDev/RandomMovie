@@ -1,0 +1,19 @@
+<div>
+	<div id="watch">
+		<h1 id="filmName"></h1>
+		<a href="/" class="btn btn-primary btn-lg">Home</a> 
+		<button class="btn btn-success btn-lg" onclick="whatWatch()">Generate</button>
+	</div>
+
+	<script type="text/javascript">
+		let whatWatch = function() {
+			axios.get('/watch/generate')
+			  .then(function (response) {
+			  	filmName.innerText = '"' + response.data.move + '"';
+			  })
+			  .catch(function (error) {
+			    console.log(error);
+			});
+		}
+	</script>
+</div>

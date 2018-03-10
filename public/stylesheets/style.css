@@ -1,0 +1,70 @@
+body {
+  background-color: red;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#container {
+	text-align: center;
+}
+
+.block {
+	display: inline-block;
+	margin-top: 7%;
+	font: 22px "Times New Roman", Times, serif;
+
+}
+
+.block > a > img {
+	height: 300px;
+}
+
+.block > a:link{
+    text-decoration: none;
+}
+.block >a:hover {
+	text-decoration: none;
+}
+.block >a:active {
+	text-decoration: none;
+	color: red;
+}
+.block >a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.block:hover{
+	font-weight: bold;
+}
+
+#watch {
+	margin: 0 auto;
+	width: 40%;
+	padding-top: 15%;
+	text-align: center;
+}
+
+#filmName {
+	font-size: 50px;
+}
+
+#add {
+	margin: 0 auto;
+	width: 40%;
+	padding-top: 20%;
+	text-align: center;
+}
+
+#add > input {
+	text-align: center;
+}
+
+#list {
+	margin: 0 auto;
+	width: 40%;
+	padding-top: 5%;
+
+}

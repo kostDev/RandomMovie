@@ -1,0 +1,23 @@
+
+<div id="add">
+	<input type="text" id="FilmData" class="form-control" placeholder="Name(s) of Film(s)"><br>
+	<a href="/" class="btn btn-primary">Home</a> 
+	<button class="btn btn-success" onclick="addFilm();">Add move</button>
+
+	<script type="text/javascript">
+		function addFilm() {
+			let data = FilmData.value;
+			if(data != ""){
+				axios.post('/add', {move:data})
+				  .then(function (res) {
+				  	console.log(res);
+				  	//location.reload();
+				  })
+				  .catch(function (err) {
+				    console.log(err);
+				});
+			}
+			FilmData.value = "";
+		}
+	</script>
+</div>
